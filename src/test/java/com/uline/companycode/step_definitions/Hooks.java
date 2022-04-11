@@ -1,6 +1,7 @@
 package com.uline.companycode.step_definitions;
 
 import com.uline.companycode.utilities.ConfigurationReader;
+import com.uline.companycode.utilities.DB_utility;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.filter.log.LogDetail;
@@ -26,11 +27,11 @@ public class Hooks {
                 .statusCode(200)
                 .contentType(ContentType.JSON).time(Matchers.lessThan(2000L));
 
-        // TODO db connection for db testing
+//        // TODO db connection for db testing
 //        String url = ConfigurationReader.getProperty("uline.database.url");
 //        String username = ConfigurationReader.getProperty("uline.database.username");
 //        String password = ConfigurationReader.getProperty("uline.database.password");
-//        DB_utility.createConnection();
+//        DB_utility.createConnection(url,username,password);
     }
 
     @After
